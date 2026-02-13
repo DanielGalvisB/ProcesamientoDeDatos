@@ -76,6 +76,28 @@ R = genres_tuple.index("disco")
 Genera una lista ordenada desde la tupla C_tuple=(-5, 1, -3):
 R = C_tuple = (-5, 1, -3) // C_list = sorted(C_tuple) // C_list
 
+**03 Listas**
+Crea una lista a_lit con los siguientes elementos 1, hello, [1,2,3] y True.
+
+R = a_list = [1, 'hello', [1, 2, 3] , True] // a_list
+
+Encuentra el valor almacenado en el índice 1 de a_list.
+R = a_list[1]
+
+Obtén el elemento almacenado en el índice 1, 2 y 3 de a_list.
+R = a_list[1:4]
+
+Concatena las siguientes listas A = [1, 'a'] y B = [2, 1, 'd']:
+R = A = [1, 'a']  // B = [2, 1, 'd'] // A + B
+
+**04 Conjuntos**
+Transformar la lista ['rap','house','electronic music', 'rap'] en un conjunto:
+R = set(['rap','house','electronic music','rap'])
+
+Considera que la lista A = [1, 2, 2, 1] y el conjunto B = set([1, 2, 2, 1])suman sum(A) = sum(B)
+
+R = A = [1, 2, 2, 1]  // B = set([1, 2, 2, 1]) // print("the sum of A is:", sum(A)) // print("the sum of B is:", sum(B))
+
 **Bono**
 #### MENOR DE DOS PARES
 lesser_of_two_evens(2,4) --> 2
@@ -171,11 +193,6 @@ def blackjack(a, b, c):
     
     # Si aún excede 21, devolver 'BUST'
     return 'BUST'
-
-# Verificación
-print(blackjack(5,6,7))    # 18
-print(blackjack(9,9,9))    # 'BUST'
-print(blackjack(9,9,11))   # 19
 
 
 
