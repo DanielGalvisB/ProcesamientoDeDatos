@@ -212,9 +212,116 @@ R = yes, for example: // con(2, 2)
 
 R = con(['a', 1], ['b', 1])
 
-#### **09
+#### **09 Clases** 
+
+Creemos ahora una clase circle, pero primero, importemos una librería para dibujar objetos:
+
+R = import matplotlib.pyplot as plt // %matplotlib inline  
+
+El objeto actual se muestra mas adelante. Incluimos el método drawCircle para mostrar la imagen de un circulo. Asignamos el valor de radius en 3 y el color en azul (blue):
+
+class Circle(object):
+    
+    # Constructor
+    def __init__(self, radius=3, color='blue'):
+        self.radius = radius
+        self.color = color 
+    
+    # Method
+    def add_radius(self, r):
+        self.radius = self.radius + r
+        return(self.radius)
+    
+    # Method
+    def drawCircle(self):
+        plt.gca().add_patch(plt.Circle((0, 0), radius=self.radius, fc=self.color))
+        plt.axis('scaled')
+        plt.show() 
+
+Vamos a crear el objeto <code>RedCircle</code> de tipo Circle para hacer lo siguiente:
+
+R = RedCircle = Circle(10, 'red')
+
+Podemos usar el comando <code>dir</code> para obtener una lista de los métodos del objeto. Muchos de ellos son métodos por defecto de Python.
+
+R = dir(RedCircle)
+
+Veamos el valor de los atributos del objeto:
+
+R = RedCircle.radius // RedCircle.color
+
+Podemos cambiar el valor de los atributos del objeto:
+
+R = RedCircle.radius = 1 // RedCircle.radius
+
+Dibujamos el objeto usando el método <code>drawCircle()</code>:
+
+R = RedCircle.drawCircle()
+
+Podemos incrementar el radio del circulo utilizando el metodo add_radius(). Incrementémoslo a 2 y después a 5:
+
+print('Radius of object:',RedCircle.radius)
+RedCircle.add_radius(2)
+print('Radius of object of after applying the method add_radius(2):',RedCircle.radius)
+RedCircle.add_radius(5)
+print('Radius of object of after applying the method add_radius(5):',RedCircle.radius)
+
+Vamos a crear un circulo azul. Su color por defecto será azul (blue), solo debemos especificar el valor que queremos darle al radio:
+
+R = BlueCircle = Circle(radius=100)
+
+Al igual que antes, también podemos acceder los atributos de una instancia al usar el punto ( . ):
+
+R = BlueCircle.radius // BlueCircle.color
+
+Podemos dibujar el objeto utilizando el método drawCircle():
+
+R = BlueCircle.drawCircle()
+
+### **La Clase Rectangulo**
+
+Vamos a crear una clase rectángulo con los atributos height (altura) y color. Solo añadiremos el método para dibujar un rectángulo:
+
+class Rectangle(object):
+    
+    # Constructor
+    def __init__(self, width=2, height=3, color='r'):
+        self.height = height 
+        self.width = width
+        self.color = color
+    
+    # Method
+    def drawRectangle(self):
+        plt.gca().add_patch(plt.Rectangle((0, 0), self.width, self.height ,fc=self.color))
+        plt.axis('scaled')
+        plt.show()
+
+Creamos el objeto SkinnyBlueRectangle de tipo Rectangle. Su anchura (width) será de 2 y la altura (height) de 3, será de color azul:
+
+R = SkinnyBlueRectangle = Rectangle(2, 10, 'blue')
+
+Al igual que antes, también podemos acceder los atributos de una instancia al usar el punto ( . ):
+
+R = SkinnyBlueRectangle.height // SkinnyBlueRectangle.width // SkinnyBlueRectangle.color
+
+Podemos dibujar el objeto:
+
+R = SkinnyBlueRectangle.drawRectangle()
+
+Vamos a crear el objeto FatYellowRectangle del tipo Rectangle:
+
+R = FatYellowRectangle = Rectangle(20, 5, 'yellow')
+
+We can access the attributes of the instance of the class by using the dot notation:
+
+R = FatYellowRectangle.height // FatYellowRectangle.width // FatYellowRectangle.color
+
+Podemos dibujar el objeto:
+
+R = FatYellowRectangle.drawRectangle()
 
 **Bono**
+
 #### MENOR DE DOS PARES
 lesser_of_two_evens(2,4) --> 2
 lesser_of_two_evens(2,5) --> 5 
